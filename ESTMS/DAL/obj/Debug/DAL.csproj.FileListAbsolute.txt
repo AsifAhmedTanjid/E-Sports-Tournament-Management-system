@@ -12,3 +12,5 @@ D:\AIUB COURSE NOTES\SEM 10\E-Sports Tournament Management System\ESTMS\DAL\bin\
 D:\AIUB COURSE NOTES\SEM 10\E-Sports Tournament Management System\ESTMS\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\AIUB COURSE NOTES\SEM 10\E-Sports Tournament Management System\ESTMS\DAL\obj\Debug\DAL.Migrations.tillTournamentTable.resources
 D:\AIUB COURSE NOTES\SEM 10\E-Sports Tournament Management System\ESTMS\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+D:\AIUB COURSE NOTES\SEM 10\E-Sports Tournament Management System\ESTMS\DAL\obj\Debug\DAL.Migrations.MatchTableAdded.resources
+D:\AIUB COURSE NOTES\SEM 10\E-Sports Tournament Management System\ESTMS\DAL\obj\Debug\DAL.Migrations.organizationAdded.resources

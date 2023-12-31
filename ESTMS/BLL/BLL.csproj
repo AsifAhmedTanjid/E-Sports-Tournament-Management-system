@@ -47,6 +47,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="DTOs\GameDTO.cs" />
+    <Compile Include="DTOs\MatchDTO.cs" />
+    <Compile Include="DTOs\OrganizationDTO.cs" />
     <Compile Include="DTOs\OrganizerDTO.cs" />
     <Compile Include="DTOs\PlayerDTO.cs" />
     <Compile Include="DTOs\SponsorDTO.cs" />
@@ -56,6 +58,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\GameService.cs" />
+    <Compile Include="Services\MatchService.cs" />
+    <Compile Include="Services\OrganizationService.cs" />
     <Compile Include="Services\OrganizerService.cs" />
     <Compile Include="Services\PlayerService.cs" />
     <Compile Include="Services\SponsorService.cs" />

@@ -55,6 +55,8 @@
     <Compile Include="DataAccessFactory.cs" />
     <Compile Include="EF\ESTMSContext.cs" />
     <Compile Include="EF\Models\Game.cs" />
+    <Compile Include="EF\Models\Match.cs" />
+    <Compile Include="EF\Models\Organization.cs" />
     <Compile Include="EF\Models\Organizer.cs" />
     <Compile Include="EF\Models\Player.cs" />
     <Compile Include="EF\Models\Sponsor.cs" />
@@ -67,9 +69,19 @@
     <Compile Include="Migrations\202312310314289_tillTournamentTable.designer.cs">
       <DependentUpon>202312310314289_tillTournamentTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202312311921437_MatchTableAdded.cs" />
+    <Compile Include="Migrations\202312311921437_MatchTableAdded.designer.cs">
+      <DependentUpon>202312311921437_MatchTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312312049422_organizationAdded.cs" />
+    <Compile Include="Migrations\202312312049422_organizationAdded.designer.cs">
+      <DependentUpon>202312312049422_organizationAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\GameRepo.cs" />
+    <Compile Include="Repos\MatchRepo.cs" />
+    <Compile Include="Repos\OrganizationRepo.cs" />
     <Compile Include="Repos\OrganizerRepo.cs" />
     <Compile Include="Repos\PlayerRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
@@ -81,6 +93,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202312310314289_tillTournamentTable.resx">
       <DependentUpon>202312310314289_tillTournamentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312311921437_MatchTableAdded.resx">
+      <DependentUpon>202312311921437_MatchTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312312049422_organizationAdded.resx">
+      <DependentUpon>202312312049422_organizationAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

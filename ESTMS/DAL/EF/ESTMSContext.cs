@@ -18,6 +18,8 @@ namespace DAL.EF
         public DbSet<Game> Games { get; set; }
         public DbSet<Sponsor> Sponsors { get; set; }
         public DbSet<Tournament> Tournaments { get; set; }
+        public DbSet<Match> Matches { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
     
 
     }
