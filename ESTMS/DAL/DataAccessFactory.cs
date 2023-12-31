@@ -57,6 +57,10 @@ namespace DAL
         {
             return new OrganizationRepo();
         }
+        public static IRepo<TournamentTeamDetail, int, TournamentTeamDetail> TournamentTeamDetailData()
+        {
+            return new TournamentTeamDetailRepo();
+        }
 
     }
 }
