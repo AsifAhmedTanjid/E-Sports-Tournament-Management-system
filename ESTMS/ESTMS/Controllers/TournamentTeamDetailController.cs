@@ -11,9 +11,6 @@ namespace ESTMS.Controllers
 {
     public class TournamentTeamDetailController : ApiController
     {
-        public class TournamentController : ApiController
-        {
-
             [HttpGet]
             [Route("api/tournamentteamdetails")]
             public HttpResponseMessage GetAll()
@@ -90,5 +87,6 @@ namespace ESTMS.Controllers
                 return Request.CreateResponse(HttpStatusCode.OK, res);
 
             }
-        }
+        
+    }
 }

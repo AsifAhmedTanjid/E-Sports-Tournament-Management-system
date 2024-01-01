@@ -7,11 +7,10 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace APIAppLayer.Controllers
+namespace ESTMS.Controllers
 {
     public class TournamentController : ApiController
     {
-
         [HttpGet]
         [Route("api/tournaments")]
         public HttpResponseMessage GetAll()
@@ -87,6 +86,21 @@ namespace APIAppLayer.Controllers
             var res = TournamentService.Delete(id);
             return Request.CreateResponse(HttpStatusCode.OK, res);
 
+        }
+
+        [HttpGet]
+        [Route("api/tournaments/{id}/matches")]
+        public HttpResponseMessage TournamentMatches(int id)
+        {
+            try
+            {
+                var data = TournamentService.GetwithMatches(id);
+                return Request.CreateResponse(HttpStatusCode.OK, data);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
+            }
         }
     }
 }

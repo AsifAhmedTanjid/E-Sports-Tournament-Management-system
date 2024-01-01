@@ -54,6 +54,7 @@
     <Compile Include="DTOs\SponsorDTO.cs" />
     <Compile Include="DTOs\TeamDTO.cs" />
     <Compile Include="DTOs\TournamentDTO.cs" />
+    <Compile Include="DTOs\TournamentMatchDTO.cs" />
     <Compile Include="DTOs\TournamentTeamDetailDTO.cs" />
     <Compile Include="DTOs\UserDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

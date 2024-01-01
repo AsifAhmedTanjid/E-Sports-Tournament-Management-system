@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace DAL.EF.Models
 {
@@ -42,6 +43,12 @@ namespace DAL.EF.Models
 
         public virtual Game Game { get; set; }
         public virtual Organizer Organizer { get; set; }
-       
+
+        public virtual ICollection<Match> Matches { get; set; }
+        public Tournament()
+        {
+            Matches = new List<Match>();
+        }
+
     }
 }

@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace APIAppLayer.Controllers
+namespace ESTMS.Controllers
 {
     public class UserController : ApiController
     {

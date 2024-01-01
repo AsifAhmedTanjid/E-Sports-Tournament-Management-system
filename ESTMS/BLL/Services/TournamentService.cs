@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace BLL.Services
 {
@@ -67,6 +68,19 @@ namespace BLL.Services
         {
             var res = DataAccessFactory.TournamentData().Delete(id);
             return res;
+        }
+
+        public static TournamentMatchDTO GetwithMatches(int id)
+        {
+            var data = DataAccessFactory.TournamentData().Get(id);
+            var cfg = new MapperConfiguration(c => {
+                c.CreateMap<Tournament, TournamentMatchDTO>();
+                c.CreateMap<Match, MatchDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<TournamentMatchDTO>(data);
+            return mapped;
+
         }
     }
 }
