@@ -3,12 +3,13 @@ using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class TournamentTeamDetailRepo : Repo, IRepo<TournamentTeamDetail, int, TournamentTeamDetail>
+    internal class TournamentTeamDetailRepo : Repo, IRepo<TournamentTeamDetail, int, TournamentTeamDetail>, ITournamentTeamStat<TournamentTeamDetail, int>
     {
         public TournamentTeamDetail Add(TournamentTeamDetail obj)
         {
@@ -32,6 +33,12 @@ namespace DAL.Repos
         public TournamentTeamDetail Get(int id)
         {
             return db.TournamentTeamDetails.Find(id);
+        }
+
+        public List<TournamentTeamDetail> Stat(int id)
+        {
+            var data = db.TournamentTeamDetails.Where(tt => tt.TournamentId == id).ToList();
+            return data;
         }
 
         public TournamentTeamDetail Update(TournamentTeamDetail obj)

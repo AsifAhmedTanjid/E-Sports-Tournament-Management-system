@@ -2,13 +2,14 @@
 using DAL.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class TournamentRepo : Repo, IRepo<Tournament, int, Tournament>
+    internal class TournamentRepo : Repo, IRepo<Tournament, int, Tournament>,ITournamentSearch<Tournament,string>,ITournament<Tournament>
     {
         public Tournament Add(Tournament obj)
         {
@@ -32,6 +33,30 @@ namespace DAL.Repos
         public Tournament Get(int id)
         {
             return db.Tournaments.Find(id);
+        }
+
+        public List<Tournament> Ongoing()
+        {
+            var filteredData = db.Tournaments.Where(t => t.StartDate < DateTime.Now && t.EndDate > DateTime.Now).ToList();
+            return filteredData;
+        }
+
+        public List<Tournament> RegistrationOpen()
+        {
+            var filteredData = db.Tournaments.Where(t => t.RegistrationOpenDate < DateTime.Now && t.RegistrationCloseDate > DateTime.Now).ToList();
+            return filteredData;
+        }
+
+        public List<Tournament> Search(string search)
+        {
+            var data= db.Tournaments.Where(t => t.TournamentTitle.Contains(search)).ToList();
+            return data;
+        }
+
+        public List<Tournament> Upcoming()
+        {
+            var filteredData =db.Tournaments.Where(t => t.RegistrationOpenDate > DateTime.Now).ToList();
+            return filteredData;
         }
 
         public Tournament Update(Tournament obj)

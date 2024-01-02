@@ -9,17 +9,15 @@ using System.Web.Http;
 
 namespace ESTMS.Controllers
 {
-    public class MatchController : ApiController
+    public class TeamDetailController : ApiController
     {
-
-
         [HttpGet]
-        [Route("api/matches")]
+        [Route("api/teamdetails")]
         public HttpResponseMessage GetAll()
         {
             try
             {
-                var data = MatchService.Get();
+                var data = TeamDetailService.Get();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
 
             }
@@ -29,12 +27,12 @@ namespace ESTMS.Controllers
             }
         }
         [HttpGet]
-        [Route("api/matches/{id}")]
+        [Route("api/teamdetails/{id}")]
         public HttpResponseMessage Get(int id)
         {
             try
             {
-                var data = MatchService.Get(id);
+                var data = TeamDetailService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
 
             }
@@ -43,13 +41,13 @@ namespace ESTMS.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { message = ex.Message });
             }
         }
-        [Route("api/matches/add")]
+        [Route("api/teamdetails/add")]
         [HttpPost]
-        public HttpResponseMessage Add(MatchDTO m)
+        public HttpResponseMessage Add(TeamDetailDTO t)
         {
             try
             {
-                var data = MatchService.Add(m);
+                var data = TeamDetailService.Add(t);
                 if (data != null)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, data);
@@ -62,13 +60,13 @@ namespace ESTMS.Controllers
             }
         }
 
-        [Route("api/matches/update")]
+        [Route("api/teamdetails/update")]
         [HttpPost]
-        public HttpResponseMessage Update(MatchDTO m)
+        public HttpResponseMessage Update(TeamDetailDTO t)
         {
             try
             {
-                var data = MatchService.Update(m);
+                var data = TeamDetailService.Update(t);
                 if (data != null)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK, data);
@@ -82,28 +80,12 @@ namespace ESTMS.Controllers
         }
 
         [HttpGet]
-        [Route("api/matches/delete/{id}")]
+        [Route("api/teamdetails/delete/{id}")]
         public HttpResponseMessage Delete(int id)
         {
-            var res = MatchService.Delete(id);
+            var res = TeamDetailService.Delete(id);
             return Request.CreateResponse(HttpStatusCode.OK, res);
 
-        }
-
-        [HttpGet]
-        [Route("api/teams/stat/{id}")]
-        public HttpResponseMessage Stat(int id)
-        {
-            try
-            {
-                var data = MatchService.Stat(id);
-                return Request.CreateResponse(HttpStatusCode.OK, data);
-
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, new { message = ex.Message });
-            }
         }
     }
 }

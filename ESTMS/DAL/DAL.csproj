@@ -61,11 +61,16 @@
     <Compile Include="EF\Models\Player.cs" />
     <Compile Include="EF\Models\Sponsor.cs" />
     <Compile Include="EF\Models\Team.cs" />
+    <Compile Include="EF\Models\TeamDetail.cs" />
     <Compile Include="EF\Models\Tournament.cs" />
     <Compile Include="EF\Models\TournamentTeamDetail.cs" />
     <Compile Include="EF\Models\User.cs" />
     <Compile Include="Interfaces\IAuth.cs" />
+    <Compile Include="Interfaces\IMatchStat.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
+    <Compile Include="Interfaces\ITournament.cs" />
+    <Compile Include="Interfaces\ITournamentSearch.cs" />
+    <Compile Include="Interfaces\ITournamentTeamStat.cs" />
     <Compile Include="Migrations\202312310314289_tillTournamentTable.cs" />
     <Compile Include="Migrations\202312310314289_tillTournamentTable.designer.cs">
       <DependentUpon>202312310314289_tillTournamentTable.cs</DependentUpon>
@@ -82,6 +87,10 @@
     <Compile Include="Migrations\202312312235519_TournamanetTable.designer.cs">
       <DependentUpon>202312312235519_TournamanetTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202401011824491_TeamDetailTable.cs" />
+    <Compile Include="Migrations\202401011824491_TeamDetailTable.designer.cs">
+      <DependentUpon>202401011824491_TeamDetailTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repos\GameRepo.cs" />
@@ -91,6 +100,7 @@
     <Compile Include="Repos\PlayerRepo.cs" />
     <Compile Include="Repos\Repo.cs" />
     <Compile Include="Repos\SponsorRepo.cs" />
+    <Compile Include="Repos\TeamDetailRepo.cs" />
     <Compile Include="Repos\TeamRepo.cs" />
     <Compile Include="Repos\TournamentRepo.cs" />
     <Compile Include="Repos\TournamentTeamDetailRepo.cs" />
@@ -108,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312312235519_TournamanetTable.resx">
       <DependentUpon>202312312235519_TournamanetTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202401011824491_TeamDetailTable.resx">
+      <DependentUpon>202401011824491_TeamDetailTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    internal class MatchRepo : Repo, IRepo<Match, int, Match>,IMatchStat<Match,int>
+    internal class TeamDetailRepo : Repo, IRepo<TeamDetail, int, TeamDetail>
     {
-        public Match Add(Match obj)
+        public TeamDetail Add(TeamDetail obj)
         {
-            db.Matches.Add(obj);
+            db.TeamDetails.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             else return null;
         }
@@ -20,27 +20,21 @@ namespace DAL.Repos
         public bool Delete(int id)
         {
             var ex = Get(id);
-            db.Matches.Remove(ex);
+            db.TeamDetails.Remove(ex);
             return db.SaveChanges() > 0;
         }
 
-        public List<Match> Get()
+        public List<TeamDetail> Get()
         {
-            return db.Matches.ToList();
+            return db.TeamDetails.ToList();
         }
 
-        public Match Get(int id)
+        public TeamDetail Get(int id)
         {
-            return db.Matches.Find(id);
+            return db.TeamDetails.Find(id);
         }
 
-        public List<Match> Stat(int id)
-        {
-            var data = db.Matches.Where(m => m.Team1Id==id || m.Team2Id == id ).ToList();
-            return data;
-        }
-
-        public Match Update(Match obj)
+        public TeamDetail Update(TeamDetail obj)
         {
             var ex = Get(obj.Id);
             db.Entry(ex).CurrentValues.SetValues(obj);

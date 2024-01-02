@@ -21,6 +21,7 @@ namespace DAL.EF
         public DbSet<Match> Matches { get; set; }
         public DbSet<Organization> Organizations { get; set; }
         public DbSet<TournamentTeamDetail> TournamentTeamDetails { get; set; }
+        public DbSet<TeamDetail> TeamDetails { get; set; }
     
 
     }

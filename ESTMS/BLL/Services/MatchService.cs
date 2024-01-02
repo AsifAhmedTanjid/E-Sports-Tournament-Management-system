@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 namespace BLL.Services
 {
@@ -67,6 +68,39 @@ namespace BLL.Services
         {
             var res = DataAccessFactory.MatchData().Delete(id);
             return res;
+        }
+
+
+        public static MatchStatDTO Stat(int id)
+        {
+            var data = DataAccessFactory.MatchStatData().Stat(id);
+            var cfg = new MapperConfiguration(c => {
+               
+                c.CreateMap<Match, MatchDTO>();
+            });
+            var mapper = new Mapper(cfg);
+            var mapped = mapper.Map<List<MatchDTO>>(data);
+            int MatchPlayed = 0;
+            int MatchWinner = 0;
+            int MatchLoser = 0;
+            foreach (var item in mapped)
+            {
+                if (item.WinnerTeamId == id) MatchWinner++;
+                else MatchLoser++;
+                MatchPlayed++;
+            }
+
+        
+            float rate = ((float)MatchWinner / MatchPlayed) * 100;
+            string winrate = rate.ToString("0.00") + "%";
+            var stats = new MatchStatDTO
+            {
+                MatchPlayed = MatchPlayed,
+                MatchWin = MatchWinner,
+                MatchLose = MatchLoser,
+                WinRate = winrate
+            };
+            return stats;
         }
     }
 }
